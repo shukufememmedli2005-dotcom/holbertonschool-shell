@@ -1,12 +1,12 @@
 #!/usr/bin/env bash
-#hjk
+# Print "Best School" 10 times, with "Hi" after 9th iteration
 count=1
 while [ $count -le 10 ]; do
-if [ $count -eq 9 ]; then
-echo "Best School" 
-echo "Hi"
-else
-echo "Best School"
-fi
-count=$(($count+1))
+  if [ $count -eq 9 ]; then
+    echo "Best School"
+    echo "Hi"
+  else
+    echo "Best School"
+  fi
+  ((count++))
 done
