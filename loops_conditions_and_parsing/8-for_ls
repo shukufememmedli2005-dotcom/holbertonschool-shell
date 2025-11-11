@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+# list files after first dash
+for file in *; do
+  echo "${file#*-}"
+done
