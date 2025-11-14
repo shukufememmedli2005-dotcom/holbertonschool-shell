@@ -1,9 +1,6 @@
 #!/usr/bin/env bash
 #as
-#d
+#g
 pid=$(pgrep -f 4-to_infinity_and_beyond)
-# stop the process by writing signal to
-for p in $pid; do
-    echo -n > /proc/$p/fd/1
-done
+echo -n > /proc/"$pid"/fd/1
 
