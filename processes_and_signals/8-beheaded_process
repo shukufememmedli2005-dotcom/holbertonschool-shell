@@ -1,4 +1,4 @@
 #!/usr/bin/env bash
-#fg
-#g
+# Terminates the 7-highlander process
+
 pgrep 7-highlander | xargs kill
