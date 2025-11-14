@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+#SDF
+for pid in /proc/[0-9]*; do
+cmd=$(cat "$pid/cmdline" 2>/dev/null)
+if [[ $cmd == *"4-to_infinity_and_beyond"* ]]; then
+kill "${pid##*/}"
+    fi
+done
