@@ -1,6 +1,4 @@
 #!/usr/bin/env bash
 #as
 #g
-pid=$(pgrep -f 4-to_infinity_and_beyond)
-echo -n > /proc/"$pid"/fd/1
-
+ps waux | grep '4-to_infinity_and_beyond | wc -l | head -c 1'
