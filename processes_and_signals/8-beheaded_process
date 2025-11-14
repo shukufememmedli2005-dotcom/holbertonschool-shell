@@ -1,4 +1,3 @@
 #!/usr/bin/env bash
-# Terminates the 7-highlander process
-
-pgrep 7-highlander | xargs kill
+#sdA
+pkill ./7-highlander
