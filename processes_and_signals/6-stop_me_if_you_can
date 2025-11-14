@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
 #J
 #J
-pid=$(pgrep -f "./4-to_infinity_and_beyond")
-[ -n "$pid" ] && pkill -f "./4-to_infinity_and_beyond"
+pid=$(grep ./4-to_infinity_and_beyond)
+ pkill ./4-to_infinity_and_beyond
