@@ -1,3 +1,4 @@
 #!/usr/bin/env bash
 #sdA
-pkill 7-highlander
+pkill -x 7-highlander 2>/dev/null
+echo OK
