@@ -1,4 +1,4 @@
 #!/usr/bin/env bash
-#sdA
-pkill -x 7-highlander 2>/dev/null
-echo OK
+#sd
+kill 7-highlander
+
