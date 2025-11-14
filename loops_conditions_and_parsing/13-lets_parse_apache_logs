@@ -1,4 +1,4 @@
-#!/usr/bin/env
+#!/usr/bin/env bash
 #gf
 awk '{print $1, $9}' apache-access.log
 
