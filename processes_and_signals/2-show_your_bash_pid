@@ -1,4 +1,4 @@
-#!/usr/bi/env
+#!/usr/bin/env bash
 #jdc
 #njlshd
 ps aux | grep bash
