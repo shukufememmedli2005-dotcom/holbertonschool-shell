@@ -1,5 +1,4 @@
 #!/usr/bin/env bash
 #fg
 #g
-kill "$(pgrep 7-highlander)"
-
+pgrep 7-highlander | xargs kill
