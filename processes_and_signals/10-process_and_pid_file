@@ -1,15 +1,33 @@
 #!/usr/bin/env bash
-# Creates /var/run/myscript.pid containing its PID and handles signals
+#fas
 
-PID_FILE="/var/run/myscript.pid"
-echo $$ | sudo tee "$PID_FILE" > /dev/null
+PIDFILE="/var/run/myscript.pid"
+echo $$ > "$PIDFILE"
 
-trap 'echo "I hate the kill command"' SIGTERM
-trap 'echo "Y U no love me?!"' SIGINT
-trap 'rm -f "$PID_FILE"; exit' SIGQUIT SIGTERM
+# --- Signal Handlers ---
 
+handle_term() {
+    echo "I hate the kill command"
+    rm -f "$PIDFILE"
+    exit 0
+}
+
+handle_int() {
+    echo "Y U no love me?!"
+}
+
+handle_quit() {
+    rm -f "$PIDFILE"
+    exit 0
+}
+
+trap handle_term SIGTERM
+trap handle_int SIGINT
+trap handle_quit SIGQUIT
+
+# --- Infinite Loop ---
 while true; do
     echo "To infinity and beyond"
-    sleep 2
+    sleep 1
 done
 
