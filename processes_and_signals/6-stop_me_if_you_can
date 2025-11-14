@@ -1,4 +1,4 @@
 #!/usr/bin/env bash
-#as
-#g
-ps waux | grep '4-to_infinity_and_beyond | wc -l | head -c 1
+# Check if '4-to_infinity_and_beyond' process is running and print 1 if yes, 0 if no
+
+ps waux | grep '4-to_infinity_and_beyond' | grep -v grep | wc -l | head -c 1
