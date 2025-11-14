@@ -1,0 +1,4 @@
+#!/usr/bi/env
+#jdc
+#njlshd
+ps aux | grep bash
