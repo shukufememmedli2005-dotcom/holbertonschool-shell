@@ -1,7 +1,5 @@
 #!/usr/bin/env bash
-
-# Find the PID of the *exact* process name "4-to_infinity_and_beyond"
-pid=$(pgrep -x 4-to_infinity_and_beyond)
-
-# If a PID was found, send SIGTERM (graceful stop)
-[ -n "$pid" ] && pkill -P "$pid"
+#J
+#J
+pid=$(pgrep -f "./4-to_infinity_and_beyond")
+[ -n "$pid" ] && pkill -f "./4-to_infinity_and_beyond"
