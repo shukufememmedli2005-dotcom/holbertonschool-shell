@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 #iofej\
 #jioasd
 for pid in /proc/[0-9]*; do
