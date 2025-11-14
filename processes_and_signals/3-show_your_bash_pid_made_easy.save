@@ -1,0 +1,11 @@
+#!/bin/bash
+#da
+for pid in /proc/[0-9]*; do          # /proc içindəki bütün nömrəli qovluqlara baxır
+    if [ -f "$pid/comm" ]; then      # əgər qovluqda comm faylı varsa
+        comm=$(cat "$pid/comm")     
+        if [[ $comm == *bash* ]]; then  # əgər adı "bash" ehtiva edirsə
+            echo "$(basename "$pid") $comm"  # PID və adı çap et
+        fi
+    fi
+done
+
