@@ -1,4 +1,8 @@
 #!/usr/bin/env bash
-# Check if '4-to_infinity_and_beyond' process is running and print 1 if yes, 0 if no
+#F
+pid=$(pgrep -x 4-to_infinity_and_beyond)
 
-ps waux | grep '4-to_infinity_and_beyond' | grep -v grep | wc -l | head -c 1
+# If found, send SIGTERM to stop it gracefully
+if [ -n "$pid" ]; then
+    pkill -f "./4-to_infinity_and_beyond"
+fi
