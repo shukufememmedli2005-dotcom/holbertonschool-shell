@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
+#fa
 PID_FILE="/tmp/myscript.pid"
 echo $$ > "$PID_FILE"
 sigterm_handler() {
