@@ -1,33 +1,28 @@
 #!/usr/bin/env bash
-#fas
-
-PIDFILE="/var/run/myscript.pid"
-echo $$ > "$PIDFILE"
-
-# --- Signal Handlers ---
-
-handle_term() {
+#fa
+echo $$ > /var/run/myscript.pid
+sigterm_handler() {
     echo "I hate the kill command"
-    rm -f "$PIDFILE"
+    # Faylı sil və skripti dayandır
+    rm -f "$PID_FILE"
     exit 0
 }
 
-handle_int() {
+sigint_handler() {
     echo "Y U no love me?!"
 }
 
-handle_quit() {
-    rm -f "$PIDFILE"
+sigquit_handler() {
+    # Faylı sil və skripti dayandır
+    rm -f "$PID_FILE"
     exit 0
 }
 
-trap handle_term SIGTERM
-trap handle_int SIGINT
-trap handle_quit SIGQUIT
+trap sigterm_handler SIGTERM
+trap sigint_handler SIGINT
+trap sigquit_handler SIGQUIT
 
-# --- Infinite Loop ---
 while true; do
     echo "To infinity and beyond"
     sleep 1
 done
-
