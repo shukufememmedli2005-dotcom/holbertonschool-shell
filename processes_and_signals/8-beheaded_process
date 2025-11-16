@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
 #sd
 for PID in $(pgrep -f 7-highlander); do
-    kill "$PID"
+    kill -9 "$PID"
 done
