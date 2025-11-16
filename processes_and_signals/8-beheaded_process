@@ -1,4 +1,4 @@
 #!/usr/bin/env bash
 #sd
-kill 7-highlander
+pkill 7-highlander
 
