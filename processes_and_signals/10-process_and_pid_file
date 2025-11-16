@@ -1,6 +1,7 @@
 #!/usr/bin/env bash
 #fa
-echo $$ > /var/run/myscript.pid
+PID_FILE="/tmp/myscript.pid"
+echo $$ > "$PID_FILE"
 sigterm_handler() {
     echo "I hate the kill command"
     # Faylı sil və skripti dayandır
